@@ -9,7 +9,7 @@ HTML, CSS, JavaScript, Email.js
 <table>
  <tr>
   <td><img src = "https://res.cloudinary.com/phantomping/image/upload/v1747851167/Github%20Project/mc9kagenukrhpl8pjx7m.png" width="500"></td>
-  <td><img src = "https://res.cloudinary.com/phantomping/image/upload/v1747851226/Github%20Project/e25lxb6onlynmltqg04w.png" width="500"></td>
+<!--   <td><img src = "https://res.cloudinary.com/phantomping/image/upload/v1747851226/Github%20Project/e25lxb6onlynmltqg04w.png" width="500"></td> -->
  </tr>
 </table>
 <div align="center">
