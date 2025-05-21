@@ -1355,7 +1355,7 @@
                         alt="constact image" draggable="false" />
                 </div>
                 <!-- class label1 ,label2,label3 added to form labels -->
-                <form class='contact' method='POST' name='contact'><input type='hidden' name='form-name'
+                <form id="contact-form" class='contact' method='POST' name='contact'><input type='hidden' name='form-name'
                         value='contact' />
                     <label for="name" class="label1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -1479,6 +1479,16 @@
                 image.style.transform = 'rotateX(0deg) rotateY(0deg)';
                 image.classList.remove('hovered');
             });
+        </script>
+        <script src="email.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init({
+                    publicKey: "g9O3pE7Cokct2to49",
+                });
+            })();
         </script>
         </body>
 
