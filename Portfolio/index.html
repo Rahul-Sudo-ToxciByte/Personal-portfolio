@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Gedal Rahul - Interactive Frontend Developer</title>
+<meta name="description" content="Gedal Rahul personal portfolio's website.">
+<link type="text/plain" rel="author" href="humans.txt">
+<!-- Restricting Zoom Meta Tag (Universal) -->
+<meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/svg+xml" href="your-svg-link.svg" />
+<link rel="alternate icon" href="your-fallback.png" />
+<link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/phantomping/image/upload/v1747331439/Porfolio/About%20Me/bl3ib9xbxrffyrmvetys.svg">
+<style>
+    body {
+        background-color: #252a60 !important;
+    }
+
+    body.loaded {
+        background-color: #f3f3f3 !important;
+    }
+
+    #page-wrap {
+        opacity: 0;
+    }
+
+    .loaded #page-wrap {
+        opacity: 1;
+    }
+
+    @-webkit-keyframes stripe {
+        0% {
+            left: 0;
+            width: 0px;
+        }
+
+        25% {
+            left: 0;
+            width: 100%;
+        }
+
+        50% {
+            left: 100%;
+            width: 0px;
+        }
+
+        75% {
+            left: 0;
+            width: 100%;
+        }
+
+        100% {
+            left: 0;
+            width: 0px;
+        }
+    }
+
+    @keyframes stripe {
+        0% {
+            left: 0;
+            width: 0px;
+        }
+
+        25% {
+            left: 0;
+            width: 100%;
+        }
+
+        50% {
+            left: 100%;
+            width: 0px;
+        }
+
+        75% {
+            left: 0;
+            width: 100%;
+        }
+
+        100% {
+            left: 0;
+            width: 0px;
+        }
+    }
+
+    #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #252a60;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.7s, visibility 0.7s, z-index 0.7s;
+        z-index: 61
+    }
+
+    #loader.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1
+    }
+
+    .no-js #loader {
+        display: none
+    }
+
+    .loader-content {
+        position: absolute;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 90px;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.25s ease;
+        z-index: 70
+    }
+
+    .loader-content.is-hidden {
+        opacity: 0;
+        visibility: hidden
+    }
+
+    .loader-content>* {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0
+    }
+
+    .stripe-loader {
+        width: 100%;
+        height: 90px
+    }
+
+    .stripe {
+        height: 30px;
+        width: 0;
+        background: #ffffff;
+        position: relative;
+        margin: 0
+    }
+
+    .stripe:first-child {
+        -webkit-animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) infinite;
+        animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) infinite
+    }
+
+    .stripe:nth-child(2) {
+        -webkit-animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.1s infinite;
+        animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.1s infinite
+    }
+
+    .stripe:nth-child(3) {
+        -webkit-animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.2s infinite;
+        animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.2s infinite
+    }
+
+    #loader-after {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #1c1d25;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.7s, visibility 0.7s, z-index 0.7s;
+        z-index: 62
+    }
+
+    #loader-after.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1
+    }
+</style>
+<link rel="stylesheet" href="css/application.css">
+</head>
+
+<div id="loader">
+    <div class="loader-content">
+        <div class="stripe-loader">
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+        </div>
+    </div>
+</div>
+<div id="loader-after"></div>
+<div id="page-transition">
+    <div class="page-transition-content">
+        <div class="stripe-loader">
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+        </div>
+    </div>
+</div>
+<div id="page-transition-after"></div>
+<div id="page-wrap">
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="main-navigation">
+        <div class="content nav-content" id="top">
+            <a href="" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" id="my-svg" width="256" height="256" viewbox="0 0 256 256">
+                    <path fill="#FFF" d="M53.2 145.1l81.9-71.7h-34.3L19 145.1l102.8 90h34.3l-102.9-90"></path>
+                    <g fill="#FFF">
+                        <path
+                            d="M145.3 145.1l36-31.6s.8-.7 1.1-1l2.4-2.4c8.5-10.3 13.3-23.3 13.3-36.7 0-31.8-25.8-57.7-57.6-57.7l-111.1.1L7.2 38.6l111.4-.1h21.9c19.2 0 34.8 15.6 34.8 34.8 0 8.2-2.7 15.8-8 22.2-1 1.3-8.3 7.3-8.3 7.3l-12.4 10.6-35.6 31.7 102.9 90h34.3l-102.9-90zm33.4-31.7h.2-.2z">
+                        </path>
+                        <path
+                            d="M252.8 236.9h-39.6l-.5-.4-104.4-91.3 37.1-33 12.5-10.6c3.5-2.9 7.5-6.3 8.1-7 5-6 7.6-13.3 7.6-21.1 0-18.2-14.8-33.1-33.1-33.1H3L28.6 14h115.8l-.1.1c31 2 55.6 27.8 55.6 59.3 0 13.6-4.9 27.1-13.7 37.8-.5.6-2.2 2.3-2.6 2.6-.3.3-1.2 1-1.2 1l-.5.4-34 29.8 104.9 91.9zm-38.3-3.5h29l-100.9-88.3 34.1-29.9h-2.2l3.6-3.5h1v1.5l1.6-1.4c.2-.2.4-.4.6-.5.4-.3 1.9-1.9 2.2-2.2 8.3-10.1 12.9-22.8 12.9-35.6 0-30.8-25.1-55.9-55.9-55.9h-3.9l-106.5-.1-18.8 19.4 109-.1h20.1c20.2 0 36.6 16.4 36.6 36.6 0 8.6-2.9 16.6-8.4 23.3-1 1.3-7.3 6.5-8.5 7.5l-12.4 10.6-34.1 30.3 100.9 88.3z">
+                        </path>
+                        <g>
+                            <path
+                                d="M249.3 235.5h-35.5l-.1-.1-103.2-90.3.3-.3 35.6-31.7 12.4-10.6c2.5-2.1 7.5-6.2 8.3-7.2 5.1-6.2 7.9-13.8 7.9-21.9 0-19-15.4-34.4-34.4-34.4H6.2l23-23.7h.2l112.1-.1c31.6.5 57.1 26.4 57.1 58.1 0 13.3-4.8 26.5-13.4 37-.4.5-2.1 2.2-2.4 2.5-.3.3-1.1 1-1.1 1l-.1.1-35.5 31.2 103.2 90.4zm-35.3-.8h33l-102.4-89.6 36.4-32c.2-.2.7-.6 1-.9.3-.3 2-1.9 2.4-2.4 8.5-10.3 13.2-23.3 13.2-36.4 0-31.5-25.7-57.2-57.2-57.3h-1l-110 .1L8 38.2l111-.1h21.5c19.4 0 35.2 15.8 35.2 35.2 0 8.3-2.8 16-8 22.4-1 1.3-8.1 7.1-8.4 7.3l-12.4 10.6-35.2 31.4L214 234.7zm-35-120.9h-1.4l1-.8h.4V113.8z">
+                            </path>
+                            <path
+                                d="M253.9 237.3H213l-.5-.4-104.8-91.7 1.8-1.6 35.6-31.7 12.5-10.6c4-3.3 7.5-6.4 8-7 4.9-5.9 7.5-13.1 7.5-20.8 0-18-14.7-32.7-32.7-32.7H2l26.4-27.2 117.2-.1-.2.2c30.6 2.6 54.8 28.5 54.8 59.6 0 13.7-4.9 27.3-13.8 38.1-.5.6-2.3 2.4-2.6 2.7-.3.3-1.2 1-1.2 1l-.5.4-33.6 29.5 105.4 92.3zm-39.2-4.3h27.7L142 145.1l33.6-29.5h-3.1l4.7-3.8.1-2.6 1.8 2 1.4.1c.2-.1.3-.3.4-.4.4-.3 1.9-1.9 2.2-2.2 8.3-10 12.8-22.6 12.8-35.3 0-30.6-24.9-55.5-55.5-55.5H30.3l-18 18.5 108.4-.1h19.7c20.4 0 37 16.6 37 37 0 8.7-2.9 16.8-8.4 23.5-.7.9-3.5 3.4-8.5 7.5L148 115.1l-33.7 30L214.7 233z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <span itemprop="name" class="visual-hide">Home</span>
+                <span aria-label="Gedal Rahul's Logo">Gedal Rahul's Logo</span>
+            </a>
+            <div aria-label="Mobile Menu" class="nav-toggle">
+                <span class="menu-trigger">
+                    <i class="menu-trigger-bar top"></i>
+                    <i class="menu-trigger-bar middle"></i>
+                    <i class="menu-trigger-bar bottom"></i>
+                </span>
+            </div>
+            <ul class="nav-links">
+                <li itemprop="name">
+                    <a href="#about" class="no-smoothState no-single-work">About</a>
+                </li>
+                <li itemprop="name">
+                    <a href="#skills" class="no-smoothState no-single-work">Skills</a>
+                </li>
+                <li itemprop="name">
+                    <a href="#education" class="no-smoothState no-single-work">Education</a>
+                </li>
+                <li itemprop="name">
+                    <a href="#projects" class="no-smoothState no-single-work">Projects</a>
+                </li>
+                <!-- <li itemprop="name">
+                            <a href="#experience" class="no-smoothState no-single-work">Experience</a>
+                        </li> -->
+                <li itemprop="name">
+                    <a href="#contact" class="no-smoothState no-single-work">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="mobile-menu">
+        <span aria-label="Close" class="close-trigger">
+            <i class="close-trigger-bar left"></i>
+            <i class="close-trigger-bar right"></i>
+        </span>
+        <ul class="mobile-nav-links">
+            <li>
+                <a href="#about" class="no-smoothState no-single-work">About</a>
+            </li>
+            <li>
+                <a href="#skills" class="no-smoothState no-single-work">Skills</a>
+            </li>
+            <li>
+                <a href="#education" class="no-smoothState no-single-work">Education</a>
+
+            </li>
+            <li>
+                <a href="#projects" class="no-smoothState no-single-work">Projects</a>
+            </li>
+            <!-- <li>
+                        <a href="#experience" class="no-smoothState no-single-work">Experience</a>
+                    </li> -->
+            <li>
+                <a href="#contact" class="no-smoothState no-single-work">Contact</a>
+            </li>
+        </ul>
+        <ul class="nav-social-stripe mobile">
+            <li class="linkedin-icon">
+                <a href="https://www.linkedin.com/in/g-rahul-871002255/" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li class="twitter-icon">
+                <a href="https://x.com/rrahul3302" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="instagram-icon">
+                <a href="https://www.instagram.com/krishnaputra.rahul" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </li>
+            <li class="github-icon">
+                <a href="https://github.com/Rahul-Sudo-ToxciByte" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+
+            <li class="gmail-icon">
+                <a href="mailto:rrahul3302@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <header id="top" class="main-hero">
+        <div id="awwwards" class="sotd green right">
+        </div>
+        <div class="main-hero-text">
+            <div class="content">
+                <div class="text-loading-mask">
+                    <div class="text-loading-overlay"></div>
+                    <h1 itemprop="author" class="main-hero-title">Gedal Rahul</h1>
+                </div>
+                <div>
+                    <div class="text-loading-mask">
+                        <div style="transition-delay: 0.1s;" class="text-loading-overlay"></div>
+                        <h3 itemprop="specialty" class="main-hero-subtitle h5">Interactive Front-end Developer</h3>
+                    </div>
+                </div>
+                <div>
+                    <div style="width: 175px;" class="text-loading-mask">
+                        <div style="transition-delay: 0.15s;" class="text-loading-overlay"></div>
+                        <a href="#about" class="the-button call-to-button no-smoothstate">
+                            <span class="button-text">About Me</span>
+                            <div class="button-mask"></div>
+                            <span class="button-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 476.213 476.213">
+                                    <path
+                                        d="M405.606 167.5l-21.212 21.213 34.393 34.393H0v30h418.787L384.394 287.5l21.212 21.213 70.607-70.607">
+                                    </path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="shapes-mask">
+            <!-- triangle-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="37.196" height="32.213" viewbox="0 0 37.196 32.213">
+                <symbol id="triangle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25.675" height="22.236" viewbox="0 0 25.675 22.236">
+                        <path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10"
+                            d="M12.837 3l5.12 8.868 5.12 8.868H2.597l5.12-8.868z"></path>
+                    </svg>
+                </symbol>
+            </svg>
+            <!-- semi circle-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="29.093" height="14.546" viewbox="0 0 29.093 14.546">
+                <symbol id="semiCircle">
+                    <path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10"
+                        d="M1.5 14.546C1.5 7.34 7.34 1.5 14.547 1.5c7.205 0 13.046 5.84 13.046 13.046"></path>
+                </symbol>
+            </svg>
+            <!-- spring-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.046" height="36.016" viewbox="0 0 17.046 36.016">
+                <symbol id="spring">
+                    <path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10"
+                        d="M9.945 34.614S1.46 31.38 1.5 23.92s11.73-4.797 11.73-4.797S3.82 16.708 4.18 8.77s12.784-7.255 12.784-7.255">
+                    </path>
+                </symbol>
+            </svg>
+            <!-- line-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="25.675" height="22.236" viewbox="0 0 25.675 22.236">
+                <symbol id="line">
+                    <path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10"
+                        d="M4.92 2.514L21.964 19.56"></path>
+                </symbol>
+            </svg>
+            <svg width="25px" height="25px" class="layer1 p1">
+                <use xlink:href="#triangle" class="yellow"></use>
+            </svg>
+            <svg width="28px" height="28px" class="layer1 p2">
+                <use xlink:href="#semiCircle" class="yellow"></use>
+            </svg>
+            <svg width="25px" height="25px" class="layer2 p3">
+                <use width="25px" height="25px" xlink:href="#triangle" class="aqua"></use>
+            </svg>
+            <svg class="layer1 p4">
+                <use xlink:href="#triangle" class="pink"></use>
+            </svg>
+            <svg width="28px" height="28px" class="layer1 p5">
+                <use xlink:href="#semiCircle" class="aqua"></use>
+            </svg>
+            <svg width="36px" height="36px" class="layer2 p6">
+                <use xlink:href="#spring" class="pink"></use>
+            </svg>
+            <svg width="36px" height="36px" class="layer2 p7">
+                <use xlink:href="#spring" class="pink"></use>
+            </svg>
+            <svg width="22px" height="22px" class="layer2 p8">
+                <use xlink:href="#line" class="aqua"></use>
+            </svg>
+            <svg width="22px" height="22px" class="layer1 p9">
+                <use xlink:href="#line" class="aqua"></use>
+            </svg>
+            <svg width="22px" height="22px" class="layer2 p10">
+                <use xlink:href="#line" class="yellow"></use>
+            </svg>
+            <svg width="28px" height="28px" class="layer1 p11">
+                <use xlink:href="#semiCircle" class="aqua"></use>
+            </svg>
+        </div>
+
+        <div itemscope="primaryImageOfPage" class="logo-mask">
+            <svg id="logo-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="256" height="256" viewbox="0 0 256 256">
+                <style>
+                    .st0 {
+                        clip-path: url(#XMLID_8_);
+                        fill: none;
+                        stroke: url(#XMLID_9_);
+                        stroke-width: 70.344;
+                        stroke-miterlimit: 10;
+                    }
+
+                    .st1 {
+                        clip-path: url(#XMLID_11_);
+                        fill: none;
+                        stroke: url(#XMLID_12_);
+                        stroke-width: 70.344;
+                        stroke-miterlimit: 10;
+                    }
+                </style>
+                <g id="XMLID_10_">
+                    <defs>
+                        <path id="XMLID_4_" d="M54.9 147.2l80-70h-33.5l-80 70L122 235.3h33.5L54.9 147.2z"></path>
+                    </defs>
+                    <clippath id="XMLID_8_">
+                        <use xlink:href="#XMLID_4_" overflow="visible"></use>
+                    </clippath>
+                    <lineargradient id="XMLID_9_" gradientunits="userSpaceOnUse" x1="-169.589" y1="333.156" x2="21.795"
+                        y2="333.156" gradienttransform="matrix(1 0 0 -1 156 491)">
+                        <stop offset="0" stop-color="#2D2E83"></stop>
+                        <stop offset="1" stop-color="#1D71B8"></stop>
+                    </lineargradient>
+                    <path id="XMLID_3_" d="M154.6 249.8L37.8 147.2c8.3-8.3 91.4-81.4 91.4-81.4" class="st0"></path>
+                </g>
+                <g id="XMLID_6_">
+                    <g id="XMLID_7_">
+                        <defs>
+                            <path id="XMLID_2_"
+                                d="M251.1 237.4h-40l-.5-.4-102.5-89.7 1.8-1.6 34.8-31 12.2-10.4c3.9-3.2 7.4-6.2 7.8-6.8 4.8-5.8 7.3-12.8 7.3-20.4 0-17.6-14.3-31.9-31.9-31.9H4.8l25.8-26.6 114.6-.1-.2.2c29.9 2.5 53.6 27.9 53.6 58.3 0 13.4-4.8 26.7-13.5 37.2-.5.6-2.3 2.3-2.6 2.6-.3.3-1.1 1-1.1 1l-.5.4L148 147l103.1 90.4z">
+                            </path>
+                        </defs>
+                        <clippath id="XMLID_11_">
+                            <use xlink:href="#XMLID_2_" overflow="visible"></use>
+                        </clippath>
+                        <lineargradient id="XMLID_12_" gradientunits="userSpaceOnUse" x1="-156.508" y1="354.122"
+                            x2="115.621" y2="354.122" gradienttransform="matrix(1 0 0 -1 156 491)">
+                            <stop offset="0" stop-color="#2D2E83"></stop>
+                            <stop offset="1" stop-color="#1D71B8"></stop>
+                        </lineargradient>
+                        <path id="XMLID_1_"
+                            d="M-.5 29.8l126.8-.1c29.9 2.5 57.4 17 57.4 47.4 0 13.4-4.3 24.4-17.4 37.2-.5.6-2.3 2.3-2.6 2.6-.3.3-1.1 1-1.1 1l-.5.4-32.9 28.8 118.9 105.6"
+                            class="st1"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <ul itemscope itemtype="http://schema.org/Organization" class="social-vertical-stripe social-links">
+
+            <li class="linkedin-icon">
+                <a href="https://www.linkedin.com/in/g-rahul-871002255/" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li class="twitter-icon">
+                <a href="https://x.com/rrahul3302" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="instagram-icon">
+                <a href="https://www.instagram.com/krishnaputra.rahul" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </li>
+            <li class="github-icon">
+                <a href="https://github.com/Rahul-Sudo-ToxciByte" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+
+            <li class="gmail-icon">
+                <a href="mailto:rrahul3302@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="some-shapes">
+            <div data-rellax-speed="-1" class="circle1 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70">
+                    <circle fill="none" stroke="#6107EF" stroke-width="9" stroke-miterlimit="10" cx="35" cy="35.1"
+                        r="28.5"></circle>
+                </svg>
+            </div>
+            <div data-rellax-speed="1" class="square1 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 100 100">
+                    <path fill="#A79FFF" d="M88 12v76H12V12h76m9-9H3v94h94V3z"></path>
+                </svg>
+            </div>
+            <div data-rellax-speed="1" class="triangle1 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70">
+                    <path fill="none" stroke="#0FE851" stroke-width="8" stroke-miterlimit="10"
+                        d="M12.6 56l22.8-39.5L58.2 56z"></path>
+                </svg>
+            </div>
+            <div data-rellax-speed="-1" class="cross1 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewbox="26 -26 180 180">
+                    <path fill="#ffda77" d="M183.208 103.01l-28.143 28.144L49 25.09 77.143-3.055z"></path>
+                    <path fill="#ffda77" d="M183.208 25.09L77.143 131.153 49 103.01 155.065-3.053z"></path>
+                </svg>
+            </div>
+            <div data-rellax-speed="-1.3" class="circle2 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70">
+                    <circle fill="none" stroke="#6107EF" stroke-width="9" stroke-miterlimit="10" cx="35" cy="35.1"
+                        r="28.5"></circle>
+                </svg>
+            </div>
+            <div data-rellax-speed="-1" class="square2 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 100 100">
+                    <path fill="#A79FFF" d="M88 12v76H12V12h76m9-9H3v94h94V3z"></path>
+                </svg>
+            </div>
+            <div data-rellax-speed="1" class="triangle2 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70">
+                    <path fill="none" stroke="#0FE851" stroke-width="8" stroke-miterlimit="10"
+                        d="M12.6 56l22.8-39.5L58.2 56z"></path>
+                </svg>
+            </div>
+            <div data-rellax-speed="1" class="cross2 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewbox="26 -26 180 180">
+                    <path fill="#ffda77" d="M183.208 103.01l-28.143 28.144L49 25.09 77.143-3.055z"></path>
+                    <path fill="#ffda77" d="M183.208 25.09L77.143 131.153 49 103.01 155.065-3.053z"></path>
+                </svg>
+            </div>
+            <div data-rellax-speed="-1" class="square3 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 100 100">
+                    <path fill="#A79FFF" d="M88 12v76H12V12h76m9-9H3v94h94V3z"></path>
+                </svg>
+            </div>
+            <div data-rellax-speed="1.3" class="circle3 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70">
+                    <circle fill="none" stroke="#6107EF" stroke-width="9" stroke-miterlimit="10" cx="35" cy="35.1"
+                        r="28.5"></circle>
+                </svg>
+            </div>
+            <div data-rellax-speed="-1" class="cross3 rellax">
+                <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewbox="26 -26 180 180">
+                    <path fill="#ffda77" d="M183.208 103.01l-28.143 28.144L49 25.09 77.143-3.055z"></path>
+                    <path fill="#ffda77" d="M183.208 25.09L77.143 131.153 49 103.01 155.065-3.053z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ABOUT----------------------------------------------------------------------------------------- -->
+        <section class="about" id="about">
+
+            <h2 class="heading"> <i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+
+            <div class="row">
+
+                <div class="image animation">
+                    <img draggable="false" class="tilt"
+                        src="https://res.cloudinary.com/phantomping/image/upload/v1747300383/Porfolio/About%20Me/zpkkrc8ifnn7uyxzcty5.jpg"
+                        alt="">
+                    <!-- Your full HTML body content -->
+
+
+                </div>
+                <div class="content">
+                    <h3 class="heading_title">I'm Rahul</h3>
+                    <span class="tag">Full Stack Web Developer | Android Developer </span>
+
+                    <p>I am a Full-Stack web and android developer based in Chhatrapur, India.
+                        I am an Computer Science graduate from GIETU Gunupur.
+                        I am very passionate about improving my coding skills, developing applications & websites
+                        I build Websites and apps.
+                        Working for myself to improve my skills.
+                        Also Grinding Out in Gym to be a better self,
+                        Love to learn new things every day. </p>
+
+                    <div class="box-container">
+
+
+                        <div class="box">
+                            <p><span class="rahul"> Age: </span> 22</p>
+                        </div>
+                        <div class="box">
+                            <p><span class="rahul"> Phone : </span> +91 9668644022</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <p><span class="rahul"> Email: </span> rrahul3302@gmail.com</p>
+                    </div>
+                    <div class="box">
+                        <p><span class="rahul"> Place : </span> Chhatrapur, India - 761020</p>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1gwRXx681m_-FBLRMZ8VtXn05muYcKK3c?usp=sharing"
+                        target="_blank" class="the-button1 round ">
+                        <span class="button-text">Resume</span>
+                        <div class="button-mask round"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- SKills Section start -->
+
+        <section class="skills " id="skills" style="background-color: #1c1d25;">
+            <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills &<span> Abilities</span></h2>
+            <div class="Skillcontainer">
+                <div class="row" id="skillsContainer">
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747301042/Porfolio/Skills%20And%20Abilities/ri92bcxgwbru3kekokc7.png"
+                                alt="HTML5" />
+                            <span>HTML5</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747301070/Porfolio/Skills%20And%20Abilities/cwyac7b7jl5vbkgsxmpl.png"
+                                alt="CSS3" />
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747301187/Porfolio/Skills%20And%20Abilities/fbqicab4pvagfnagfzo8.png"
+                                alt="JavaScript" />
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747301187/Porfolio/Skills%20And%20Abilities/havtkzwskccopllpyirw.png"
+                                alt="ReactJS" />
+                            <span>ReactJS</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img
+                                src="https://res.cloudinary.com/phantomping/image/upload/v1747301187/Porfolio/Skills%20And%20Abilities/yoo4wqybtdvhxrekkjvr.png" />
+                            <span>TailwindCSS</span>
+                        </div>
+                    </div>
+                    <!-- here start  -->
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747301186/Porfolio/Skills%20And%20Abilities/mgejlrhihbbkujebkbqf.png"
+                                alt="BootStrap" />
+                            <span>BootStrap</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747309870/Porfolio/Skills%20And%20Abilities/rcf35v8pco6aiua3ozfy.png"
+                                alt="ExpressJS" />
+                            <span>ExpressJS</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747309870/Porfolio/Skills%20And%20Abilities/lhnyl8s8euufhyuvlg2m.png"
+                                alt="NextJS" />
+                            <span>NextJS</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747309870/Porfolio/Skills%20And%20Abilities/vjdppywdwebpb459sdze.png"
+                                alt="NodeJS" />
+                            <span>NodeJS</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747309870/Porfolio/Skills%20And%20Abilities/rdjk81cpqzc0b3puwx1u.png"
+                                alt="Firebase" />
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747309870/Porfolio/Skills%20And%20Abilities/jubv3qjusfjnkmudfyra.png"
+                                alt="C" />
+                            <span>C</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747309870/Porfolio/Skills%20And%20Abilities/ikhjipfhnwvod74ffkwv.png"
+                                alt="C++" />
+                            <span>C++</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310223/Porfolio/Skills%20And%20Abilities/cmlgtchiqfgemdtfz5lj.png"
+                                alt="Android" />
+                            <span>Android</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310224/Porfolio/Skills%20And%20Abilities/htqfnwtqsfgv3nuk13ml.png"
+                                alt="Java" />
+                            <span>Java</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310224/Porfolio/Skills%20And%20Abilities/hinkaqrrnhsacov4phh6.png"
+                                alt="JQuery" />
+                            <span>JQuery</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310224/Porfolio/Skills%20And%20Abilities/n8axh8g4e691llhqb6ns.png"
+                                alt="Kotlin" />
+                            <span>Kotlin</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310224/Porfolio/Skills%20And%20Abilities/iyd90qzmlhgt8tjmow17.png"
+                                alt="PHP" />
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310224/Porfolio/Skills%20And%20Abilities/z6nuapvj9cqcxtqpbbpt.png"
+                                alt="Python" />
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310470/Porfolio/Skills%20And%20Abilities/djqzikcqk0b4i4guttm3.png"
+                                alt="Django">
+                            <span>Django</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310470/Porfolio/Skills%20And%20Abilities/eqgm8f5kz2xzyzpwohfx.png"
+                                alt="MongoDB">
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310471/Porfolio/Skills%20And%20Abilities/ix27s77zrahpbq8q1epd.png"
+                                alt="MySQL">
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310470/Porfolio/Skills%20And%20Abilities/o7k4zo9htxlsoikdef3x.png"
+                                alt="SQL">
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310470/Porfolio/Skills%20And%20Abilities/zgl3okwjo133rranzqa6.png"
+                                alt="AWS">
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310470/Porfolio/Skills%20And%20Abilities/mnaity9zhkajpgjz2w8k.png"
+                                alt="Heroku">
+                            <span>Heroku</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310653/Porfolio/Skills%20And%20Abilities/ap7ok8slt9zg8otlr4dz.png"
+                                alt="Netifly">
+                            <span>Netifly</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310653/Porfolio/Skills%20And%20Abilities/oc8ktrwqbiy7osqoh4lw.png"
+                                alt="DigitalOcean">
+                            <span>DigitalOcean</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img height=43
+                                src="https://res.cloudinary.com/phantomping/image/upload/v1747310057/Porfolio/Skills%20And%20Abilities/rfatgz7zckqtiubbbnsa.png"
+                                alt="Vercel">
+                            <span>Vercel</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310653/Porfolio/Skills%20And%20Abilities/f5pl0mdxrqwqodewncwm.png"
+                                alt="Git VCS">
+                            <span>Git VCS</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310653/Porfolio/Skills%20And%20Abilities/paqes3hx2shaaxzvdrib.png"
+                                alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310653/Porfolio/Skills%20And%20Abilities/ag8rde5yuijaitt6kzqd.png"
+                                alt="Docker">
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310874/Porfolio/Skills%20And%20Abilities/sirqm5ooebslajms0ky3.png"
+                                alt="WordPress">
+                            <span>WordPress</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310874/Porfolio/Skills%20And%20Abilities/p7ask0rq82zbeve7anxi.png"
+                                alt="Premiere Pro">
+                            <span>Premiere Pro</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img
+                                src="https://res.cloudinary.com/phantomping/image/upload/v1747310874/Porfolio/Skills%20And%20Abilities/fs8eg8nnfmtjloczu08x.png">
+                            <span>XD</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img width="43" height="43"
+                                src="https://res.cloudinary.com/phantomping/image/upload/v1747310874/Porfolio/Skills%20And%20Abilities/vdksqvqqxbgqjk4nsrsd.png"
+                                <span>Rust</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310874/Porfolio/Skills%20And%20Abilities/pqc461drxnlezdzje98i.png"
+                                alt="Photoshop">
+                            <span>Photoshop</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747310874/Porfolio/Skills%20And%20Abilities/u43pcia34a07zgfxqjpg.png"
+                                alt="adobe-illustrator" />
+                            <span>Illustrator</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747313306/Porfolio/Skills%20And%20Abilities/rkiujoemqrabayz3fmjn.png"
+                                alt="adobe-indesign">
+                            <span>Indesign</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747313307/Porfolio/Skills%20And%20Abilities/m8npgdxnbspbybzyjzz7.png"
+                                height="45" alt="adobe-indesign">
+                            <span>After Effects</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747313307/Porfolio/Skills%20And%20Abilities/j2grlvrkwyjycphi8vgs.png"
+                                alt="Figma">
+                            <span>Figma</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img height="43"
+                                src="https://res.cloudinary.com/phantomping/image/upload/v1747313307/Porfolio/Skills%20And%20Abilities/trc52tpb6iohtscb0nfh.png"
+                                alt="kali-linux">
+                            <span>Kali-linux</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747313306/Porfolio/Skills%20And%20Abilities/f8figqpra3z4xivpte4a.png"
+                                alt="bash">
+                            <span>Bash</span>
+                        </div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="info">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747313307/Porfolio/Skills%20And%20Abilities/v4tmdtxwmyhqzoslp20o.png"
+                                alt="Unix">
+                            <span>Unix</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- skills section ends -->
+
+
+        <!-- education section starts -->
+        <section class="education" id="education">
+
+            <center>
+                <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
+            </center>
+
+            <p class="qoute">Hardwork Beats Talent when talent doesn't work hard.</p>
+
+            <div class="box-container">
+                <a href="https://www.giet.edu" target="_blank" rel="noopener" class="box">
+                    <div class="image">
+                        <img draggable="false"
+                            src="https://res.cloudinary.com/phantomping/image/upload/v1747300694/Porfolio/My%20Education/metpdowyr2nfayv7x14v.jpg"
+                            alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Gandhi Institute Of Engineering and Technology | Gunupur, Odisha</h3>
+                        <p>Bachelor of Computer Science and Engineering | B.Tech</p>
+                        <h4>2021-2025 |Completed </h4>
+                    </div>
+                </a>
+                <a href="https://oav.edu.in/oav/home/oavkar" target="_blank" rel="noopener" class="box">
+                    <div class="image">
+                        <img draggable="false"
+                            src="https://res.cloudinary.com/phantomping/image/upload/v1747300820/Porfolio/My%20Education/bi2kl96uooezwd4qfag6.png"
+                            alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Odisha Adrasha Vidyalaya | Karapalli, Odisha</h3>
+                        <p>Intermediate | CBSE</p>
+                        <h4>2019-2021 | Completed</h4>
+                    </div>
+                </a>
+
+                <a href="https://oav.edu.in/oav/home/oavkar" target="_blank" rel="noopener" class="box">
+                    <div class="image">
+                        <img draggable="false"
+                            src="https://res.cloudinary.com/phantomping/image/upload/v1747300820/Porfolio/My%20Education/bi2kl96uooezwd4qfag6.png"
+                            alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Odisha Adrasha Vidyalaya | Karapalli, Odisha</h3>
+                        <p>Matriculation | CBSE</p>
+                        <h4>2007-2019 | Completed</h4>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- education section ends -->
+
+        <!-- work section start -->
+        <div class="work-section" id="projects">
+            <h2 class="heading"><i class="fas fa-laptop-code"></i> Project's Made</span></h2>
+            <div class="project project0">
+                <div class="project-img">
+                    <div class="project-img-wrapper">
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Ride-Mate" target="_blank">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747788378/Porfolio/Projects/w6cbbsfjyjtkknj0cod9.png"
+                                alt="project image" draggable="false" />
+                        </a>
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Ride-Mate" target="_blank">
+                            <span class="visit-site">Ride Mate
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Ride Mate</h3>
+                    <span>(Ride Booking)</span>
+                    <p>
+                        Ride Mate is a user-friendly platform designed to simplify ride-sharing and carpooling,
+                        connecting commuters for hassle-free, cost-effective, and eco-friendly travel. Built the
+                        complete site from scratch.
+                    </p>
+
+                    <ul>
+                        <li>#react.js</li>
+                        <li>#javascript</li>
+                        <li>#html</li>
+                        <li>#css</li>
+                        <li>#mongoDB</li>
+                        <li>#vite</li>
+                        <li>#tailwind css</li>
+                        <li>#express.js</li>
+                        <li>#figma</li>
+                    </ul>
+                </div>
+                <a class="circle-dot" href="https://github.com/Rahul-Sudo-ToxciByte/Ride-Mate" target="_blank"></a>
+                <div class="circle-extension"></div>
+            </div>
+            <div class="project project1">
+                <div class="project-details">
+                    <h3>Study Notion</h3>
+                    <span>(EduTech Startup)</span>
+                    <p>
+                        As lead developer, transformed Study Notion into a responsive, interactive e-learning
+                        platform by adding key features and optimizing performance. Collaborated closely with
+                        product and UX teams to elevate user experience.
+                    </p>
+
+                    <ul>
+                        <li>#react.js</li>
+                        <li>#javascript</li>
+                        <li>#mongoDB</li>
+                        <li>#tailwind css</li>
+                        <li>#express.js</li>
+                        <li>#figma</li>
+                    </ul>
+                </div>
+                <div class="project-img">
+                    <div class="project-img-wrapper">
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Study-Notion" target="_blank">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747330826/Porfolio/Projects/e1br2hqimo0kwpi5fox1.png"
+                                alt="project image" draggable="false" />
+                        </a>
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Study-Notion" target="_blank">
+                            <span class="visit-site">Study Notion
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a class="circle-dot" href="https://github.com/Rahul-Sudo-ToxciByte/Study-Notion" target="_blank">
+                </a>
+                <div class="circle-extension"></div>
+            </div>
+            <div class="project project2">
+                <div class="project-img">
+                    <div class="project-img-wrapper">
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Movie-Recomendation-System" target="_blank">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747330154/Porfolio/Projects/j4ackiaxujyn4gvrbimm.png"
+                                alt="project image" draggable="false" />
+                        </a>
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Movie-Recomendation-System" target="_blank">
+                            <span class="visit-site">Movie Recommendation
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Movie Recommendation</h3>
+                    <span>(CineSense)</span>
+                    <p>
+                        As the lead developer, transformed the Movie Recommendation System into an intelligent,
+                        user-centric platform. Engineered advanced recommendation algorithms, introduced new
+                        features.
+                    </p>
+                    <ul>
+                        <li>#jupyter notebook</li>
+                        <li>#html</li>
+                        <li>#css</li>
+                        <li>#python</li>
+                        <li>#pickle</li>
+                        <li>#kaggle</li>
+                        <li>#google colab</li>
+                        <li>#figma</li>
+                    </ul>
+                </div>
+                <a class="circle-dot" href="https://github.com/Rahul-Sudo-ToxciByte/Movie-Recomendation-System"
+                    target="_blank"></a>
+                <div class="circle-extension"></div>
+            </div>
+            <div class="project project3">
+                <div class="project-details">
+                    <h3>Cloud Burst System</h3>
+                    <span>(Weather Prediction)</span>
+                    <p>
+                        Cloud Burst System is a smart weather prediction project that uses data analytics to
+                        forecast heavy rainfall and storms, helping in early warnings and disaster prevention. It
+                        delivers accurate, real-time weather updates for better safety and planning.
+                    </p>
+
+                    <ul>
+                        <li>#html</li>
+                        <li>#css</li>
+                        <li>#python</li>
+                        <li>#jupyter notebook</li>
+                        <li>#random forest</li>
+                        <li>#xg boost</li>
+                        <li>#figma</li>
+                    </ul>
+                </div>
+                <div class="project-img">
+                    <div class="project-img-wrapper">
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Cloud-Brust-System" target="_blank">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747330151/Porfolio/Projects/zb4fsh4plbpgkgbrhd2x.png"
+                                alt="project image" draggable="false" />
+                        </a>
+
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Cloud-Brust-System" target="_blank">
+                            <span class="visit-site">Cloud Burst System
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a class="circle-dot" href="https://github.com/Rahul-Sudo-ToxciByte/Cloud-Brust-System"
+                    target="_blank"></a>
+                <div class="circle-extension"></div>
+            </div>
+            <div class="project project4">
+                <div class="project-img">
+                    <div class="project-img-wrapper">
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Voice-Assistant" target="_blank">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747330155/Porfolio/Projects/dtx0lbz1tlgbowbzuu5t.png"
+                                alt="project image" draggable="false" />
+                        </a>
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Voice-Assistant" target="_blank">
+                            <span class="visit-site">Voice Assistant
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Voice Assistant</h3>
+                    <span>(Smart Way Life)</span>
+                    <p>
+                        A Voice Assistant uses speech recognition to understand and respond to user commands,
+                        enabling hands-free control of tasks and devices. It enhances convenience by making
+                        interactions faster and more intuitive.
+                    </p>
+
+                    <ul>
+                        <li>#html</li>
+                        <li>#css</li>
+                        <li>#python</li>
+                        <li>#jupyter notebook</li>
+                        <li>#pickle</li>
+                        <li>#kaggle</li>
+                        <li>#google colab</li>
+                        <li>#figma</li>
+                    </ul>
+                </div>
+                <a class="circle-dot" href="https://github.com/Rahul-Sudo-ToxciByte/Voice-Assistant"
+                    target="_blank"></a>
+                <div class="circle-extension"></div>
+            </div>
+            <div class="project project5">
+                <div class="project-details">
+                    <h3>Wifi-Deauthenticatior</h3>
+                    <span>(WiFi Kick)</span>
+                    <p>
+                        Wifi-Deauthenticator is a tool designed to disconnect devices from a Wi-Fi network by
+                        sending deauthentication signals, often used for testing network security or managing
+                        connections.
+                    </p>
+                    <ul>
+                        <li>#html</li>
+                        <li>#css</li>
+                        <li>#python</li>
+                        <li>#arduino uno</li>
+                        <li>#esp32</li>
+                        <li>#figma</li>
+                    </ul>
+                </div>
+                <div class="project-img">
+                    <div class="project-img-wrapper">
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Wifi-Deauthenticator" target="_blank">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747330149/Porfolio/Projects/ivobmo2y4iacf62wkva7.png"
+                                alt="project image" draggable="false" />
+                        </a>
+
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Wifi-Deauthenticator" target="_blank">
+                            <span class="visit-site">Wifi-Deauthenticatior
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a class="circle-dot" href="https://github.com/Rahul-Sudo-ToxciByte/Wifi-Deauthenticator"
+                    target="_blank"></a>
+                <div class="circle-extension"></div>
+            </div>
+            <div class="project project6">
+                <div class="project-img">
+                    <div class="project-img-wrapper">
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Ransomeware" target="_blank">
+                            <img src="https://res.cloudinary.com/phantomping/image/upload/v1747330152/Porfolio/Projects/llhxlmfu2t7ryn7yz5uy.png"
+                                alt="project image" draggable="false" />
+                        </a>
+                        <a href="https://github.com/Rahul-Sudo-ToxciByte/Ransomeware" target="_blank">
+                            <span class="visit-site">Ransomware
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Ransomware</h3>
+                    <span>(Rans Ware)</span>
+                    <p>
+                        Ransomware is malicious software that encrypts a victim’s files and demands payment to
+                        restore access, posing serious cybersecurity threats to individuals and organizations.
+                    </p>
+
+                    <ul>
+                        <li>#html</li>
+                        <li>#css</li>
+                        <li>#python</li>
+                        <li>#jupyter notebook</li>
+                        <li>#pickle</li>
+                        <li>#kaggle</li>
+                        <li>#google colab</li>
+                        <li>#kali linux</li>
+                        <li>#figma</li>
+                    </ul>
+                </div>
+                <a class="circle-dot" href="https://github.com/Rahul-Sudo-ToxciByte/Ransomeware" target="_blank"></a>
+                <div class="circle-extension"></div>
+            </div>
+
+            <div class="vertical-line"></div>
+            <div class="repo">
+                <a href="https://github.com/Rahul-Sudo-ToxciByte" target="_blank" class="the-button1 rounded">
+                    <span class="button-text"><i class="fab fa-github">&nbsp;</i>Github</span>
+                    <div class="button-mask rounded"></div>
+                </a>
+            </div>
+        </div>
+        <!-- work section ends -->
+
+        <!-- Experience section starts
+            <section class="experience" id="experience">
+                <h2 class="section-title" data-aos="fade-down">
+                    <i class="fas fa-briefcase"></i> Experience
+                </h2>
+
+                <div class="timeline" data-aos="fade-down">
+                    <div class="line"></div>
+
+                    <div class="container left" data-aos="fade-down" data-aos-delay="100">
+                        <div class="icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="triangle_right"></div>
+                        <div class="details">
+                            <h4>Skill Vertex</h4>
+                            <p>Android Development | Training And Internship</p>
+                            <span class="span1">Aug 2022 - Oct 2022</span>
+                        </div>
+                    </div>
+
+                    <div class="container right" data-aos="fade-down" data-aos-delay="200">
+                        <div class="icon1"><i class="fas fa-briefcase"></i></div>
+                        <div class="triangle_left"></div>
+                        <div class="details right_details">
+                            <h4>Self Employed</h4>
+                            <p>Full Stack Developer</p>
+                            <span class="span1">Jan 2022 - Present</span>
+                        </div>
+                    </div>
+
+                    <div class="container left" data-aos="fade-down" data-aos-delay="300">
+                        <div class="icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="triangle_right"></div>
+                        <div class="details">
+                            <h4>Rinex.Ai</h4>
+                            <p>Cyber Security | Training And Internship</p>
+                            <span class="span1">May 2023 - Aug 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="morebtn" data-aos="fade-down" data-aos-delay="none">
+                    <a href="https://drive.google.com/drive/folders/1BMSuiWQaN2EMoyszaIDahKtgnwlAuIG8?usp=sharing"
+                        target="_blank" class="btn">
+                        <span>View All</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section> -->
+        <!-- Experience section ends -->
+
+
+        <!-- Project start -->
+
+        <section class="contact-section" id="contact">
+            <h2>Let's Connect</h2>
+            <div class="contact-form">
+                <div class="contact-img">
+                    <img src="https://res.cloudinary.com/phantomping/image/upload/v1747331199/Porfolio/Connect/ac2vph01d3mz337munrg.svg"
+                        alt="constact image" draggable="false" />
+                </div>
+                <!-- class label1 ,label2,label3 added to form labels -->
+                <form class='contact' method='POST' name='contact'><input type='hidden' name='form-name'
+                        value='contact' />
+                    <label for="name" class="label1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-user">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Name</label>
+                    <input type="text" name="Name" id="name" required />
+                    <label for="email" class="label2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-at-sign">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+                        </svg>
+                        Email</label>
+                    <input type="email" name="Email" id="email" required />
+                    <label for="message" class="label3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-message-square">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Message</label>
+                    <textarea name="message" id="message" cols="15" rows="5" required></textarea>
+                    <button class="submit-btn" type="submit">
+                        <i class="fas fa-paper-plane"></i> &nbsp; Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+        <!-- Project End -->
+
+        <footer itemscope itemtype="http://schema.org/WPFooter" class="footer">
+            <div class="content">
+                <a href="#top" class="footer-logo">
+                    <img src="https://res.cloudinary.com/phantomping/image/upload/v1747331485/Porfolio/Connect/p62tqtqkaroroprbf6mo.png"
+                        alt="Gedal Rahul's Personal Logo">
+                    <div class="footer-logo-top-label">
+                        Top
+                        <div class="footer-logo-top-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 31.479 31.479">
+                                <path
+                                    d="M26.477 10.274a1.112 1.112 0 0 1 0 1.587 1.12 1.12 0 0 1-1.571 0l-8.047-8.047v26.555c0 .619-.492 1.111-1.111 1.111a1.118 1.118 0 0 1-1.127-1.111V3.813L6.59 11.86c-.444.429-1.159.429-1.587 0a1.112 1.112 0 0 1 0-1.587L14.955.321a1.12 1.12 0 0 1 1.571 0l9.951 9.953z"
+                                    fill="#1e201d"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <div class="inner-container text-center">
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://x.com/rrahul3302" target="_blank" rel="noopener"><i
+                                    class="fab fa-twitter twitter"></i> &nbsp;Twitter</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/g-rahul-871002255/" target="_blank" rel="noopener"><i
+                                    class="fab fa-linkedin-in linkedin"></i> &nbsp;Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Comrade-Rahul-2003" target="_blank" rel="noopener"><i
+                                    class="fab fa-github"></i> &nbsp;Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/comrade_rahul.exe/" target="_blank" rel="noopener"><i
+                                    class="fab fa-instagram instagram"></i> &nbsp;Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-copy">
+                    </script>
+                    Designed with ❤️ By<a href="https://www.linkedin.com/in/g-rahul-871002255/" target="_blank"
+                        rel="noopener"> Rahul</a>
+                </div>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/jquery.min.js"><\\/script>');
+        </script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }
+                    ,
+                    i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            }
+            )(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-62939051-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script src="js/application.js"></script>
+        <script>
+            const image = document.querySelector('.image img');
+
+            image.addEventListener('mousemove', (e) => {
+                const rect = image.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = -(y - centerY) / 15;
+                const rotateY = (x - centerX) / 15;
+
+                image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                image.classList.add('hovered');
+            });
+
+            image.addEventListener('mouseleave', () => {
+                image.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                image.classList.remove('hovered');
+            });
+        </script>
+        </body>
+
+</html>
