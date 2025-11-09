@@ -25,7 +25,7 @@ HTML, CSS, JavaScript, Email.js
 
 Feel free to reach me through the handles below if you'd like to contact me.
 
-&nbsp;&nbsp;<a href="https://www.linkedin.com/in/g-rahul-871002255/"><img src="https://www.felberpr.com/wp-content/uploads/linkedin-logo.png" width="30"></img></a>
+&nbsp;&nbsp;<a href="https://www.linkedin.com/in/gedal-rahul-871002255/"><img src="https://www.felberpr.com/wp-content/uploads/linkedin-logo.png" width="30"></img></a>
 
 © 2025 Rahul
 
