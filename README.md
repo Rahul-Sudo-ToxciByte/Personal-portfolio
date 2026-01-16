@@ -1,4 +1,4 @@
-# Pesonal Portfolio
+# Personal Portfolio
 Showcasing my best work, creativity, and skills through curated projects.
 Each piece reflects my passion, growth, and commitment to quality.
  
